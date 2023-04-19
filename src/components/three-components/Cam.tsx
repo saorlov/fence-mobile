@@ -11,16 +11,16 @@ const Cam = () => {
     const maxDistance = Math.max(ctx.planeWidth, ctx.planeHeight)
     const dynamicCameraPosition: [
         x: number, y: number, z: number
-    ] = [maxDistance * 1.2, maxDistance * .5, maxDistance * 1.2]
+    ] = [maxDistance, maxDistance * .5, maxDistance]
 
     useEffect(() => {
         if (ref.current) set({ camera: ref.current })
-        // console.log(1)
     }, [ctx.planeWidth, ctx.planeHeight, set]);
     useFrame(() => {
         if (ref.current) ref.current.updateMatrixWorld()
     });
-    return <perspectiveCamera ref={ref} fov={75} near={1} far={250} position={dynamicCameraPosition} />;
+
+    return <perspectiveCamera ref={ref} aspect={window.innerWidth / window.innerHeight} fov={75} near={1} far={250} position={dynamicCameraPosition} />;
 };
 
 export default Cam

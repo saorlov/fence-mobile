@@ -1,14 +1,13 @@
 import React from 'react';
-import { Container } from '@chakra-ui/react'
 import CanvasComponent from "./components/CanvasComponent";
 import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
   return (
       <ChakraProvider>
-          <Container maxW='1440px' margin='auto'>
+          <div style={{maxWidth: '1440px', margin: 'auto', overflow: "hidden",}}>
               <CanvasComponent />
-          </Container>
+          </div>
       </ChakraProvider>
   );
 }

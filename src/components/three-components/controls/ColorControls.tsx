@@ -20,9 +20,9 @@ function ColorControls() {
                 <FormControl>
                     <FormLabel>Выберите цвет забора</FormLabel>
                     <Select defaultValue={'gray'} onChange={changeHandler}>
-                        <option value='darksalmon'>darksalmon</option>
-                        <option value='teal'>teal</option>
-                        <option value='gray'>gray</option>
+                        <option value='darksalmon'>Пыльно-розовый</option>
+                        <option value='teal'>Морской зеленый</option>
+                        <option value='gray'>Серый</option>
                     </Select>
                 </FormControl>
 
