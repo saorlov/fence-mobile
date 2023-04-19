@@ -5,7 +5,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 function App() {
   return (
       <ChakraProvider>
-          <div style={{maxWidth: '1440px', margin: 'auto', overflow: "hidden",}}>
+          <div style={{overflow: "hidden",}}>
               <CanvasComponent />
           </div>
       </ChakraProvider>
