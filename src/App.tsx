@@ -1,12 +1,12 @@
 import React from 'react';
-import CanvasComponent from "./components/CanvasComponent";
 import { ChakraProvider } from '@chakra-ui/react'
+import AppComponent from "./components/AppComponent";
 
 function App() {
   return (
       <ChakraProvider>
-          <div style={{overflow: "hidden",}}>
-              <CanvasComponent />
+          <div style={{overflow: "hidden", position: 'relative'}}>
+              <AppComponent />
           </div>
       </ChakraProvider>
   );
