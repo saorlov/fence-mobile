@@ -90,14 +90,14 @@ function FenceMesh({position, rotation, color, args}: FenceProps) {
                 rotation={rotation}
             >
                 <meshStandardMaterial color={'black'} />
-                <boxGeometry args={[args[0] - .5, .2, .2, 32, 32, 32]} />
+                <boxGeometry args={[args[0] - .5, .2, .2, 8, 8, 8]} />
             </mesh>
             <mesh
                 position={[position[0] < 0 ? position[0] + .2 : position[0] - .2, position[1] * 1.20, position[2] < 0 ? position[2] + .2 : position[2] - .2]}
                 rotation={rotation}
             >
                 <meshStandardMaterial color={'black'} />
-                <boxGeometry args={[args[0] - .5, .2, .2, 32, 32, 32]} />
+                <boxGeometry args={[args[0] - .5, .2, .2, 8, 8, 8]} />
             </mesh>
             {
                 points.map((el, i) => {
@@ -107,7 +107,7 @@ function FenceMesh({position, rotation, color, args}: FenceProps) {
                             position={[el.x, el.y, el.z]}
                         >
                             <meshStandardMaterial color={'black'} />
-                            <boxGeometry args={[.2, 1.7, .2, 32, 32, 32]} />
+                            <boxGeometry args={[.2, 1.7, .2, 4, 4, 4]} />
                         </mesh>
                     )
                 })

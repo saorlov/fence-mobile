@@ -14,7 +14,7 @@ function GroundPlane({rotation, position}: PlaneProps) {
     const ctx = useContext(SceneContext)
     const groundSize = Math.max(ctx.planeHeight, ctx.planeWidth)
 
-    const geometry = new THREE.PlaneGeometry(groundSize + 5, groundSize + 5, 128, 128)
+    const geometry = new THREE.PlaneGeometry(groundSize + 5, groundSize + 5, 8, 8)
     geometry.setAttribute('uv2', geometry.attributes.uv)
 
     const groundColorMap = useLoader(TextureLoader, '/textures/ground/Ground_Grass_001_COLOR.jpg')
@@ -46,7 +46,6 @@ function GroundPlane({rotation, position}: PlaneProps) {
     const groundRoughness = useLoader(TextureLoader, '/textures/ground/Ground_Grass_001_ROUGH.jpg')
 
     const material = new THREE.MeshStandardMaterial({
-        // color: 'mediumseagreen',
         map: groundColorMap,
         aoMap: groundAOmap,
         displacementMap: groundDisplacementMap,

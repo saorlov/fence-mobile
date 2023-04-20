@@ -21,24 +21,24 @@ function Fence() {
     return (
         <>
             <FenceMesh
-                args={[fenceHeight, wallHeight, 32, 32]}
+                args={[fenceHeight, wallHeight, 16, 16]}
                 color={fenceColor}
                 position={[fenceWidth / 2, wallHeight / 2, 0]}
                 rotation={[0, -Math.PI / 2, 0]}
             />
             <FenceMesh
-                args={[fenceHeight, wallHeight, 32, 32]}
+                args={[fenceHeight, wallHeight, 16, 16]}
                 color={fenceColor}
                 position={[-fenceWidth / 2, wallHeight / 2, 0]}
                 rotation={[0, Math.PI / 2, 0]}
             />
             <FenceMesh
-                args={[fenceWidth, wallHeight, 32, 32]}
+                args={[fenceWidth, wallHeight, 16, 16]}
                 color={fenceColor}
                 position={[0, wallHeight / 2, fenceHeight / 2]}
             />
             <FenceMesh
-                args={[fenceWidth, wallHeight, 32, 32]}
+                args={[fenceWidth, wallHeight, 16, 16]}
                 color={fenceColor}
                 position={[0, wallHeight / 2, -fenceHeight / 2]}
             />
@@ -50,7 +50,7 @@ function Fence() {
                             position={[el.x, el.y, el.z]}
                         >
                             <meshStandardMaterial color={'black'} />
-                            <boxGeometry args={[.2, 2, .2, 32, 32, 32]} />
+                            <boxGeometry args={[.2, 2, .2, 4, 4, 4]} />
                         </mesh>
                     )
                 })
