@@ -4,6 +4,8 @@ export interface SceneContextValues {
     planeHeight: number,
     planeWidth: number,
     color?: Color,
+    walls: boolean[],
+    setWalls: (w: boolean[]) => void,
     setHeight: (a: number) => void,
     setWidth: (a: number) => void,
     setColor: (a: string) => void,

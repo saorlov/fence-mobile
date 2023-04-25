@@ -2,6 +2,7 @@ import { useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import {useContext} from "react";
 import {SceneContext} from "../../../context/Contexts";
+import Bush from "./Bush";
 
 function Bushes(props: any) {
 
@@ -25,7 +26,7 @@ function Bushes(props: any) {
             x: posX,
             y: 0,
             z: posY,
-            model: model.scene.clone()
+            model: model.scene.clone(true)
         })
     }
 
@@ -35,13 +36,7 @@ function Bushes(props: any) {
             {
                 points.map((el, i) => {
                     return (
-                        <mesh
-                            key={i}
-                            position={[el.x, el.y, el.z]}
-                            scale={Math.random() + .5}
-                        >
-                            <primitive object={el.model}/>
-                        </mesh>
+                        <Bush position={[el.x, el.y, el.z]} model={el.model} />
                     )
                 })
             }

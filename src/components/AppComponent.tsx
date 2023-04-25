@@ -13,6 +13,7 @@ import PlaneSizeForm from "./three-components/controls/PlaneSizeForm";
 import ColorControls from "./three-components/controls/ColorControls";
 import CanvasComponent from "./CanvasComponent";
 import SceneContextWrapper from "../context/contextWrappers/SceneContextWrapper";
+import FenceOrientation from "./three-components/controls/FenceOrientation";
 
 function AppComponent(props: any) {
 
@@ -38,8 +39,14 @@ function AppComponent(props: any) {
                         <PopoverCloseButton />
                         <PopoverHeader>Параметры</PopoverHeader>
                         <PopoverBody>
-                            <PlaneSizeForm />
-                            <ColorControls />
+                            <Flex
+                                flexDirection={'column'}
+                                gap={5}
+                            >
+                                <PlaneSizeForm />
+                                <FenceOrientation />
+                                <ColorControls />
+                            </Flex>
                         </PopoverBody>
                     </PopoverContent>
                 </Popover>

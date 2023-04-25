@@ -11,6 +11,7 @@ function SceneContextWrapper({children}: {
     const [planeHeight, setHeight] = useState(30)
     const [planeWidth, setWidth] = useState(30)
     const [colorScheme, setColorScheme] = useState('gray')
+    const [walls, setWalls] = useState([true, true, true, true])
 
     const fenceColor = new THREE.Color(colorScheme as ColorRepresentation)
 
@@ -20,6 +21,10 @@ function SceneContextWrapper({children}: {
                 planeHeight,
                 planeWidth,
                 color: fenceColor,
+                walls: walls,
+                setWalls: (walls: boolean[]) => {
+                    setWalls(walls)
+                },
                 setHeight: (n: number) => {
                     setHeight(n)
                 },

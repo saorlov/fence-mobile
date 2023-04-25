@@ -9,6 +9,7 @@ function Fence() {
     const fenceColor = ctx.color
     const fenceWidth = ctx.planeWidth
     const fenceHeight = ctx.planeHeight
+    const walls = ctx.walls
     const wallHeight = 2.5
 
     const points = [
@@ -20,30 +21,38 @@ function Fence() {
 
     return (
         <>
-            <FenceMesh
-                args={[fenceHeight, wallHeight, 16, 16]}
-                color={fenceColor}
-                position={[fenceWidth / 2, wallHeight / 2, 0]}
-                rotation={[0, -Math.PI / 2, 0]}
-            />
-            <FenceMesh
-                args={[fenceHeight, wallHeight, 16, 16]}
-                color={fenceColor}
-                position={[-fenceWidth / 2, wallHeight / 2, 0]}
-                rotation={[0, Math.PI / 2, 0]}
-            />
-            <FenceMesh
-                args={[fenceWidth, wallHeight, 16, 16]}
-                color={fenceColor}
-                position={[0, wallHeight / 2, fenceHeight / 2]}
-            />
-            <FenceMesh
-                args={[fenceWidth, wallHeight, 16, 16]}
-                color={fenceColor}
-                position={[0, wallHeight / 2, -fenceHeight / 2]}
-            />
             {
-                points.map((el, i) => {
+                walls[0] && <FenceMesh
+                    args={[fenceHeight, wallHeight, 16, 16]}
+                    color={fenceColor}
+                    position={[fenceWidth / 2, wallHeight / 2, 0]}
+                    rotation={[0, -Math.PI / 2, 0]}
+                />
+            }
+            {
+                walls[2] && <FenceMesh
+                    args={[fenceHeight, wallHeight, 16, 16]}
+                    color={fenceColor}
+                    position={[-fenceWidth / 2, wallHeight / 2, 0]}
+                    rotation={[0, Math.PI / 2, 0]}
+                />
+            }
+            {
+                walls[1] && <FenceMesh
+                    args={[fenceWidth, wallHeight, 16, 16]}
+                    color={fenceColor}
+                    position={[0, wallHeight / 2, fenceHeight / 2]}
+                />
+            }
+            {
+                walls[3] && <FenceMesh
+                    args={[fenceWidth, wallHeight, 16, 16]}
+                    color={fenceColor}
+                    position={[0, wallHeight / 2, -fenceHeight / 2]}
+                />
+            }
+            {
+                walls.every(Boolean) && points.map((el, i) => {
                     return (
                         <mesh
                             key={i}
